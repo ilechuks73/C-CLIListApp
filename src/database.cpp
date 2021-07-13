@@ -6,7 +6,9 @@ void Database::write(vector<string> list){
   ofstream db;
   db.open("db/lists.sl");
   if(db.is_open()){
-    db << "'1, 2, 3, 4, 5'";
+    for(int i=0; i<(int)list.size(); i++){
+    db << list[i] << endl;
+  }
 
   }
   else{
@@ -22,8 +24,10 @@ vector<string> Database::read(){
   db.open("db/lists.sl");
   if(db.is_open()){
     while(getline(db, line, '\n')){
-      data.push_back(line);
-
+      if(line.front()== '#'){
+        cout << "found a user" <<endl ;
+      }
+      else if(line.front() == ')
     }
   }
   else{

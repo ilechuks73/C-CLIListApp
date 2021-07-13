@@ -20,7 +20,7 @@ void List::print_menu()
   if(choice == '4' )
   {
     cout << "Exiting ..." << endl;
-    exit(0);
+    return;
   }
   else if(choice == '1')
   {
@@ -118,7 +118,7 @@ void List::print_list()
   cout << "### List ###" << endl;
   Database database;
 
-  vector<string> data = database.read();
+  vector<string> data = list;
   for(int i=0; i<(int)data.size(); i++){
     cout << data[i] << endl;
   }
